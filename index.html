@@ -1,70 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script>src="src.js"</script>
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 50%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
+    <script type = "text/javascript" src ="src.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <button  type="button" onclick="RowMaker()">Insert Row</button>
 </head>
 <body>
 </table>
-<button type="button" onclick="RowMaker()">Insert Row</button>
-<script>
-const employiner = [];
 
-function viewClick(index) {
-  const employee = employiner[index];
-  const employeeJson = JSON.stringify(employee);
-  localStorage.setItem('employee', employeeJson);
-  location.href = 'second.html';
-}
-
-function employeeDataGenerator() {
-  const i = employiner.length;
-
-  const employee = {
-      id:i,
-      name:"Account"+i,
-      CreatedOn: "05-08-2021",
-      Owner:"User"+i,
-  }
-
-  employiner.push(employee);
-
-  return employee;
-}
-function RowMaker() {
-  const employee = employeeDataGenerator();
-  let table = document.getElementById("myTable")
-  
-  let row = table.insertRow(-1);
-  let cell1 = row.insertCell(0);
-  let cell2 = row.insertCell(1);
-  let cell3 = row.insertCell(2);
-  let cell4 = row.insertCell(3);
-  let cell5 = row.insertCell(4);
-
-  cell1.innerHTML = employee.id
-  cell2.innerHTML = employee.name
-  cell3.innerHTML = employee.CreatedOn
-  cell4.innerHTML = employee.Owner
-  cell5.innerHTML = `<input type= "button" onclick="viewClick(${employee.id})" value = "view">`;
-}
-</script>
 <table id = "myTable">
   <tr>
     <th>ID</th>
@@ -74,4 +17,7 @@ function RowMaker() {
     <th>Action</th>
   </tr>
 </body>
+<script>
+
+</script>
 </html>

@@ -8,13 +8,13 @@ function viewClick(index) {
 }
 
 function employeeDataGenerator() {
-  const i = employiner.length;
+  const employeelength = employiner.length;
 
   const employee = {
-      id:i,
-      name:"Account"+i,
+      id:employeelength,
+      name:"Account"+employeelength,
       CreatedOn: "05-08-2021",
-      Owner:"User"+i,
+      Owner:"User"+employeelength,
   }
 
   employiner.push(employee);
